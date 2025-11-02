@@ -70,15 +70,14 @@ void updateSectorStatus(int grid[ROWS][COLS], int row, int col, int bitPos, int 
     }
 
     if (value == 1) {
-        grid[row][col] |= (1 << bitPos);    // Set the bit
+        grid[row][col] |= (1 << bitPos);    
     } else {
-        grid[row][col] &= ~(1 << bitPos);   // Clear the bit
+        grid[row][col] &= ~(1 << bitPos);  
     }
 
     printf("Sector (%d, %d) updated successfully.\n", row, col);
 }
 
-// Function to display the status of a specific sector
 void querySectorStatus(int grid[ROWS][COLS], int row, int col) {
     if (row < 0 || row >= ROWS || col < 0 || col >= COLS) {
         printf("Invalid coordinates!\n");
@@ -109,4 +108,5 @@ void runSystemDiagnostic(int grid[ROWS][COLS]) {
     printf("Total Overloaded Sectors     : %d\n", overloadedCount);
     printf("Total Maintenance Required   : %d\n", maintenanceCount);
 }
+
 
